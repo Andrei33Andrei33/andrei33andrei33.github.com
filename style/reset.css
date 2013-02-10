@@ -1,0 +1,140 @@
+﻿/********************************
+ * Standard HTML elements
+********************************/
+
+* {
+	font-size: 100.01%;
+}
+
+html, body, ul, ol, li, dl, dt, dd, p, h1, h2, h3, h4, h5, h6, blockquote, form, fieldset, legend, table, td, th {
+	margin: 0;
+	padding: 0;
+}
+
+html,
+body {
+	height: 100%;
+	font-size: 14px;
+}
+
+body {
+	background: #002c33;
+}
+
+a {
+	text-decoration: underline;
+	cursor: pointer;
+	color: #ccc;
+}
+
+a:visited {
+	text-decoration: underline;
+}
+
+a:hover,
+a:focus {
+	
+	text-decoration: none;
+}
+a:hover, a:active, a:focus {
+	outline:none;
+}
+img {
+	border: 0;
+}
+
+p,
+address,
+blockquote {
+	margin: 0;
+	margin-bottom: 0.7em;
+}
+
+address {
+	font-style: normal;
+}
+
+small {
+	font-size: 10px;
+}
+
+hr {
+	border: 0 hidden;
+	border-top: 1px solid #504942;
+	clear: both;
+	height: 0;
+	width: 100%;
+}
+
+fieldset{
+	background: none;
+	border: none;
+}
+input:focus {
+	outline: none !important;
+}
+dl,
+ul {
+	margin: 0;
+}
+
+ol {
+}
+
+ul {
+	list-style-type: none;
+	padding: 0;
+}
+
+li {
+	margin: 0px;
+}
+
+dt {
+	font-weight: normal;
+	margin: 0;
+}
+
+dd {
+	margin: 0 0 0px 0;
+}
+
+h1, h2, h3, h4, h5 {
+	font-weight: normal;
+}
+
+h1 {
+}
+
+h2 {
+}
+
+h2 b {
+}
+
+h3 {
+}
+
+h4 {
+}
+
+h5 {
+}
+
+
+table {
+	border: none;
+	border-spacing: 0;
+}
+
+td,
+th {
+	border: none;
+}
+
+/********************************
+ * Standart presets
+********************************/
+.float-right {
+	float: right;
+}

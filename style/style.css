@@ -1,0 +1,126 @@
+﻿#layout {
+	width: 998px;
+	min-height: 600px;
+	margin: 0 auto;
+	background: url('../images/header-seash.png') right 30px no-repeat, url('../images/lo-backg-z-2.jpg') left top no-repeat;
+	box-shadow: 0px 0px 10px #000;	
+	position:relative;
+	padding-top: 220px;
+	height: 1380px;
+}
+ul#menu {
+	margin-left: 60px;
+}
+ul#menu li {
+	
+}
+ul#menu li a {
+	font-family: Calibri;
+	color: #fff;
+	font-size: 30px;
+	text-decoration:none;
+	font-weight: bold;
+	text-transform: uppercase;
+	display: block;
+	height: 50px;
+	background: transparent url('../images/seash-menu.png') left top no-repeat;
+	padding: 20px 0 0 50px;
+	max-width: 480px;
+	text-shadow: 0px 0px 7px #000;
+	position: relative;
+	z-index: 10;
+}
+ul#menu li a:hover {
+	text-decoration: underline;
+	background-image:url('../images/seash-menu-big.png');
+}
+a#logo {
+	position: absolute;
+	top: 90px;
+	left: 70px;
+}
+a#logo img {
+	
+}
+div#content {
+	padding: 10px 42px;
+	position: relative;
+	padding-top: 20px;
+	margin-top: 0px;
+	text-align: right;
+}
+div#content p {
+	text-align: right;
+	color: #fff;
+	font-size: 30px;
+	font-family: Calibri, Arial, Helvetica, sans-serif;
+	font-weight: bold;
+	text-shadow: 0 0 7px #000;
+	line-height: 0.9em;
+}
+div#white-stripe {
+	border-left: 1px solid #fff;
+	position:absolute;
+	min-height:1350px;
+	height: 1350px;
+	top: 168px;
+	left: 36px;
+}
+img.map {
+	width: 780px;
+	display: block;
+	margin: 0 auto;
+}
+img.other-logo {
+	box-shadow: 10px 10px 10px #000;
+	margin: 0 10px 1em 0;
+}
+table.actor-studios {
+	text-align:right;
+	width: 500px;
+	margin-left: 416px;
+}
+img.camera {
+	position: absolute;
+	top: 80px;
+	left: 220px;
+}
+.font-46 {
+	font-size: 46px;
+}
+div.left-column {
+	width: 380px;
+	float: left;
+	margin-right: 45px;
+	padding-top: 100px;
+	text-align: left;
+	margin-left: 30px;
+}
+div.left-column p {
+	text-align: left !important;
+	font-size:24px !important;
+}
+div.right-column {
+	width: 470px;
+	padding-top: 20px;
+	margin-left: 460px;
+	text-align: left; 
+}
+div.right-column ol li {
+	color: #FFFFFF;
+    font-family: Calibri,Arial,Helvetica,sans-serif;
+    font-size: 18px;
+    font-weight: bold;
+    line-height: 0.9em;
+    text-shadow: 0 0 7px #000000;
+    margin-bottom: 0.8em;
+    list-style-position: inside;
+}
+div.right-column ol li:last-child {
+	margin: 0;
+}
+div.right-column ol li a {
+	color: #fff;
+	position: relative;
+	z-index: 20;
+}
