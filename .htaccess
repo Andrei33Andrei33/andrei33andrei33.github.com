@@ -1,0 +1,7 @@
+DirectoryIndex index.html
+
+
+Options -Indexes
+
+RewriteEngine on
+RewriteBase /

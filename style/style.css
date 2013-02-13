@@ -26,7 +26,7 @@ ul#menu li a {
 	background: transparent url('../images/seash-menu.png') left top no-repeat;
 	padding: 20px 0 0 50px;
 	max-width: 480px;
-	text-shadow: 0px 0px 7px #000;
+	text-shadow: 4px 4px 3px #000000, 0 0 3px #000;
 	position: relative;
 	z-index: 10;
 }
@@ -55,7 +55,7 @@ div#content p {
 	font-size: 30px;
 	font-family: Calibri, Arial, Helvetica, sans-serif;
 	font-weight: bold;
-	text-shadow: 0 0 7px #000;
+	text-shadow:  4px 4px 3px #000000, 0 0 3px #000;
 	line-height: 0.9em;
 }
 div#white-stripe {
@@ -112,7 +112,7 @@ div.right-column ol li {
     font-size: 18px;
     font-weight: bold;
     line-height: 0.9em;
-    text-shadow: 0 0 7px #000000;
+    text-shadow:  4px 4px 3px #000000, 0 0 3px #000;
     margin-bottom: 0.8em;
     list-style-position: inside;
 }
