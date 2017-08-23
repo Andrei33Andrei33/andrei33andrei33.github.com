@@ -1,0 +1,6 @@
+=pseudo($display: block, $position: absolute, $content: "")
+  display: $display
+  position: $position
+  content: $content
+  @if $position == absolute
+    z-index: 1

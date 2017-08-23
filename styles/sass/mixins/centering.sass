@@ -1,0 +1,27 @@
+=centering($axis, $type: absolute)
+  @if $axis == x
+      margin-left: auto
+      margin-right: auto
+
+  @else if $axis == y
+    @if $type == absolute
+      position: absolute
+      top: 50%
+    @else
+      margin-top: 50%
+    transform: translateY(-50%)
+
+  @else if $axis == xy or $axis == yx
+    @if $type == absolute
+      position: absolute
+      top: 50%
+      left: 50%
+      transform: translateY(-50%) translateX(-50%)
+    @else
+      margin-top: 50%
+      margin-left: auto
+      margin-right: auto
+      transform: translateY(-50%)
+
+  @else
+    @warn Specify X or Y axis

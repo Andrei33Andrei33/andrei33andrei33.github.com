@@ -1,0 +1,86 @@
+// ****************************************************
+// ******************* TYPE: Common *******************
+// ****************************************************
+
+.svg
+  display: inline-block
+  font-size: 12px
+  line-height: 0
+  text-align: center
+  vertical-align: middle
+
+
+
+// Sizes
+
+.svg-arrow
+  +icons-sizes-list($svg-arrow-size)
+
+.svg-check
+  +icons-sizes-list($svg-check-size)
+
+.svg-close
+  +icons-sizes-list($svg-close-size)
+
+.svg-condenast
+  +icons-sizes-list($svg-condenast-size)
+
+.svg-menu
+  +icons-sizes-list($svg-menu-size)
+
+.svg-play
+  +icons-sizes-list($svg-play-size)
+
+.svg-plus
+  +icons-sizes-list($svg-plus-size)
+
+.svg-search
+  +icons-sizes-list($svg-search-size)
+
+.svg-spinner
+  +icons-sizes-list($svg-spinner-size)
+
+
+
+
+
+// ****************************************************
+// ****************** TYPE: Socials *******************
+// ****************************************************
+
+// Colors
+
+@each $social, $color in $color-socials
+  .svg-#{$social}--brand
+    +icons-style($color, tint)
+
+
+
+// Sizes
+
+.svg-fb
+  +icons-sizes-list($svg-fb-size)
+
+.svg-ggl
+  +icons-sizes-list($svg-ggl-size)
+
+.svg-inst
+  +icons-sizes-list($svg-inst-size)
+
+.svg-pin
+  +icons-sizes-list($svg-pin-size)
+
+.svg-tg
+  +icons-sizes-list($svg-tg-size)
+
+.svg-tw
+  +icons-sizes-list($svg-tw-size)
+
+.svg-vk
+  +icons-sizes-list($svg-vk-size)
+
+.svg-wapp
+  +icons-sizes-list($svg-wapp-size)
+
+.svg-yt
+  +icons-sizes-list($svg-yt-size)

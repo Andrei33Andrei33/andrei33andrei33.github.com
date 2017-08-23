@@ -1,0 +1,47 @@
+=font($family: null, $weight: null, $transform: null, $spacing: null)
+
+  @if $family != null
+    @if type-of($family) == "string" or type-of($family) == "list"
+      font-family: $family
+
+  @if $weight != null
+    @if type-of($weight) == "number"
+      font-weight: $weight
+    @else if $weight == "thin"
+      font-weight: 100
+    @else if $weight == "light"
+      font-weight: 300
+    @else if $weight == "normal"
+      font-weight: 400
+    @else if $weight == "medium"
+      font-weight: 500
+    @else if $weight == "semibold" or $weight == "semi-bold"
+      font-weight: 600
+    @else if $weight == "bold"
+      font-weight: 700
+    @else if $weight == "extrabold" or $weight == "extra-bold"
+      font-weight: 800
+
+  @if $transform != null
+    @if type-of($transform) == "string"
+      text-transform: $transform
+
+  @if $spacing != null
+    @if type-of($spacing) == "number"
+      letter-spacing: $spacing
+
+
+
+=text($fs: null, $lh: null, $color: null)
+
+  @if $fs != null
+    @if type-of($fs) == "number"
+      font-size: $fs
+
+  @if $lh != null
+    @if type-of($lh) == "number" and type-of($fs) == "number"
+      line-height: unit-to-em($lh, $fs)
+
+  @if $color != null
+    @if type-of($color) == "color"
+      color: $color

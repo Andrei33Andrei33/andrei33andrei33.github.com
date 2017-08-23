@@ -1,0 +1,20 @@
+=animation($property: $animation-property, $time: $animation-time, $timing: $animation-timing, $delay: $animation-delay, $cursor: default)
+  -webkit-transition: $property $time $timing $delay
+  -moz-transition: $property $time $timing $delay
+  -o-transition: $property $time $timing $delay
+  transition: $property $time $timing $delay
+  @if $cursor != default
+    cursor: $cursor
+
+=animation-hover-opacity($property: opacity, $time: $animation-time, $timing: $animation-timing, $delay: $animation-delay, $cursor: pointer, $opacity: $animation-opacity)
+  +animation($property, $time, $timing, $delay)
+  cursor: $cursor
+  +opacity(1)
+  &:hover
+    +opacity($opacity)
+
+=animation-multi($animations...)
+  -webkit-transition: $animations
+  -moz-transition: $animations
+  -o-transition: $animations
+  transition: $animations

@@ -1,0 +1,19 @@
+=font-face($name, $path, $weight: normal, $style: normal, $exts: eot woff2 woff ttf svg)
+  $srcCompat: null
+  $src: null
+  $formats: (otf: "opentype", ttf: "truetype")
+  @each $ext in $exts
+    $format: if(map-has-key($formats, $ext), map-get($formats, $ext), $ext)
+    @if $ext == eot
+      $srcCompat: $src, url($path + ".eot")
+      $src: append($src, url($path + ".eot?#iefix") format("embedded-opentype"))
+    @else if $ext == svg
+      $src: append($src, url($path + ".svg#" + $name) format("svg"))
+    @else
+      $src: append($src, url(quote($path + "." + $ext)) format(quote($format)), comma)
+  @font-face
+    font-family: quote($name)
+    font-weight: $weight
+    font-style: $style
+    src: $srcCompat
+    src: $src

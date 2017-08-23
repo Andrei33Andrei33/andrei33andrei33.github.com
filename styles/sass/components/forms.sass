@@ -1,0 +1,68 @@
+// ****************************************************
+// ***************** TYPE: common *********************
+// ****************************************************
+
+form
+
+  &__row
+    position: relative
+    &+&
+      margin-top: $form-row-indent
+
+
+
+input,
+select
+  +reset-input
+  +reset-box-model
+  +reset-focus
+  width: 100%
+  box-shadow: none
+  box-sizing: border-box
+  border: 0
+  border-radius: 0
+  background: none
+  -webkit-appearance: none
+
+
+
+
+
+// ****************************************************
+// ***************** TYPE: input *********************
+// ****************************************************
+
+input
+
+
+
+
+
+// ****************************************************
+// ***************** TYPE: select *********************
+// ****************************************************
+
+select
+  cursor: pointer
+
+
+
+
+
+// ****************************************************
+// ***************** TYPE: input-group ****************
+// ****************************************************
+
+.input-group
+  display: table
+
+  &__input
+    display: table-cell
+    position: relative
+
+  &__aside
+    display: table-cell
+    position: relative
+    width: 1%
+    vertical-align: middle
+    white-space: nowrap

@@ -1,0 +1,20 @@
+=triangle($direction: null, $width: 0, $height: $width, $color: transparent)
+  @if $direction != null
+    display: block
+    width: 0
+    height: 0
+    border-style: solid
+    @if $direction == top
+      border-width: 0 round($width/2) $height
+      border-color: transparent transparent $color
+    @else if $direction == right
+      border-width: round($width/2) 0 round($width/2) $height
+      border-color: transparent transparent transparent $color
+    @else if $direction == bottom
+      border-width: $height round($width/2) 0
+      border-color: $color transparent transparent transparent
+    @else if $direction == left
+      border-width: round($width/2) $height round($width/2) 0
+      border-color: transparent $color transparent transparent
+  @else
+    @warn Specify direction

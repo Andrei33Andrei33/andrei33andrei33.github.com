@@ -1,0 +1,17 @@
+// Strips the unit from a given number-unit-combination and returns the number
+
+@function unset-unit($value)
+  @if type-of($value) == number
+    @return $value / ($value * 0 + 1)
+
+
+
+
+
+// Convert px, rem and numbers to em
+
+@function unit-to-em($value, $onepx: $browser-font-size)
+  @if unit($value) == "px"
+    @return ( unset-unit($value) * 1/unset-unit($onepx)) + 0em
+  @else if unit($value) == "em" or unit($value) == "rem" or unit($value) == ""
+    @return unset-unit($value) + 0em

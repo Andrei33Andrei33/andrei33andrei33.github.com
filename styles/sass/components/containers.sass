@@ -1,0 +1,15 @@
+.container
+  position: relative
+  +margin-x(auto)
+
+  &--full
+    width: 100%
+    overflow: hidden
+
+  &--standart
+    max-width: $container-max-width
+    +padding-x(map-get($grid-gutters, d))
+
+    @each $screen, $gutter in map-unique-values($grid-gutters, $grid-breakpoints)
+      +respond-to($from: $screen)
+        +padding-x($gutter)

@@ -1,0 +1,24 @@
+=icons-style ($svg-color: none, $hover-svg-color: $svg-color)
+  @if $svg-color != none
+    fill: $svg-color
+  @if $hover-svg-color != $svg-color
+    +animation
+    cursor: pointer
+    &:hover
+      @if $hover-svg-color == tint
+        fill: tint($svg-color, $color-tint-procentage)
+      @else
+        fill: $hover-svg-color
+
+=icons-size ($w: 0, $h: $w)
+  background-size: $w $h
+  width: $w
+  height: $h
+
+=icons-sizes-list ($name)
+  @each $size, $value in $name
+    &--#{$size}
+      @if type-of($value) == number
+        +icons-size($value)
+      @else if type-of($value) == list
+        +icons-size(nth($value, 1), nth($value, 2))

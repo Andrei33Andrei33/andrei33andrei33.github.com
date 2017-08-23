@@ -1,0 +1,30 @@
+=placeholder($color: inherit, $overflow: ellipsis, $input-focus: fade-out)
+
+  &::-webkit-input-placeholder
+    color: $color
+    text-overflow: $overflow
+    +animation
+  &::-moz-placeholder
+    color: $color
+    text-overflow: $overflow
+    +animation
+  &:-ms-input-placeholder
+    color: $color
+    text-overflow: $overflow
+    +animation
+  &:-moz-placeholder
+    color: $color
+    text-overflow: $overflow
+    +animation
+
+  @if $input-focus == fade-out
+    &:focus::-webkit-input-placeholder
+      color: transparent
+    &:focus::-moz-placeholder
+      color: transparent
+    &:focus:-moz-placeholder
+      color: transparent
+    &:focus:-ms-input-placeholder
+      color: transparent
+
+  @content

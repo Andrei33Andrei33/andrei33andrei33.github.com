@@ -1,0 +1,51 @@
+=respond-to($from: 0, $to: 0, $media-type: screen)
+
+  // Backward compatibility with old versions
+
+  $old-breakpoints-from: ()
+  $old-breakpoints-to: ()
+  @each $break in map-keys($grid-breakpoints)
+    $old-breakpoints-from: map-merge($old-breakpoints-from, (#{$break}-min: $break))
+    $old-breakpoints-to: map-merge($old-breakpoints-to, (#{$break}-max: $break))
+
+  // Set min-width
+
+  @if map-has-key($grid-breakpoints, $from)
+    $from: map-get($grid-breakpoints, $from)
+  @else if map-has-key($old-breakpoints-from, $from)
+    $from: map-get($grid-breakpoints, map-get($old-breakpoints-from, $from))
+  @else if map-has-key($old-breakpoints-to, $from)
+    $to: map-get($grid-breakpoints, map-get($old-breakpoints-to, $from))
+    $from: 0
+  @else if type-of($from) == number
+    $from: unit-to-em($from)
+  @else
+    @warn "Wrong variable $from value"
+
+  // Set max-width
+
+  @if map-has-key($grid-breakpoints, $to)
+    $to: map-get($grid-breakpoints, $to) - unit-to-em($one-px-in-em)
+  @else if type-of($to) == number
+    $to: unit-to-em($to)
+  @else
+    @warn "Wrong variable $to value"
+
+  // Check values
+
+  @if unit($from) != unit($to) and $from > 0 and $to > 0
+    @warn "Variables $from and $to mast be in the same measurement system"
+  @if $from > $to and $to > 0
+    @warn "Variables $to value can`t be greater than $from"
+
+  // Set media queries
+
+  @if $from > 0 and $to <= 0
+    @media only #{$media-type} and (min-width: $from)
+      @content
+  @else if $from <= 0 and $to > 0
+    @media only #{$media-type} and (max-width: $to)
+      @content
+  @else if $from > 0 and $to > 0
+    @media only #{$media-type} and (min-width: $from) and (max-width: $to)
+      @content

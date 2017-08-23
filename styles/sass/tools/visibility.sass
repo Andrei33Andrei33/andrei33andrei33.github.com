@@ -1,0 +1,36 @@
+$index-breakpoints: 0
+
+@each $start, $break in $grid-breakpoints
+  $index-breakpoints: $index-breakpoints+1
+  .show-to-#{$start}, .show-inline-to-#{$start}
+    display: none !important
+  +respond-to($to: $start)
+    .show-to-#{$start}
+      display: block !important
+    .show-inline-to-#{$start}
+      display: inline-block !important
+    .hide-to-#{$start}
+      display: none !important
+  $i: 0
+  @each $end, $break in $grid-breakpoints
+    $i: $i+1
+    @if $index-breakpoints < $i
+      .show-#{$start}-to-#{$end}, .show-inline-#{$start}-to-#{$end}
+        display: none !important
+      +respond-to($from: $start, $to: $end)
+        .show-#{$start}-to-#{$end}
+          display: block !important
+        .show-inline-#{$start}-to-#{$end}
+          display: inline-block !important
+        .hide-#{$start}-to-#{$end}
+          display: none !important
+    @if $index-breakpoints == length($grid-breakpoints)
+      .show-from-#{$end}, .show-inline-from-#{$end}
+        display: none !important
+      +respond-to($from: $end)
+        .show-from-#{$end}
+          display: block !important
+        .show-inline-from-#{$end}
+          display: inline-block !important
+        .hide-from-#{$end}
+          display: none !important
